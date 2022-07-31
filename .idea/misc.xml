@@ -3,7 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/User/AndroidStudioProjects/navermap/app/src/main/res/drawable/background_splash.xml" value="0.128" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/navermap/app/src/main/res/drawable/ic_launcher_topic_background.xml" value="0.1435" />
         <entry key="..\:/Users/User/AndroidStudioProjects/navermap/app/src/main/res/layout/activity_main.xml" value="0.12454710144927536" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/navermap/app/src/main/res/layout/activity_splash.xml" value="0.16983695652173914" />
       </map>
     </option>
   </component>

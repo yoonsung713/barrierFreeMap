@@ -13,6 +13,7 @@ import com.naver.maps.map.MapFragment;
 import com.naver.maps.map.NaverMap;
 import com.naver.maps.map.NaverMapOptions;
 import com.naver.maps.map.OnMapReadyCallback;
+import com.naver.maps.map.UiSettings;
 import com.naver.maps.map.overlay.InfoWindow;
 import com.naver.maps.map.overlay.Marker;
 import com.naver.maps.map.overlay.Overlay;
@@ -33,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                 new FusedLocationSource(this, LOCATION_PERMISSION_REQUEST_CODE);
 
         CameraPosition cameraPosition = new CameraPosition(
-                new LatLng(37.297753,126.835452), // 대상 지점
+                new LatLng(37.2980031,126.8344545), // 대상 지점
                 16, // 줌 레벨
                 20, // 기울임 각도
                 0 // 베어링 각도
@@ -72,6 +73,22 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         naverMap.setLocationSource(locationSource);
         naverMap.setLocationTrackingMode(LocationTrackingMode.Follow);
 
+        CameraPosition cameraPosition = new CameraPosition(
+                new LatLng(37.2980031,126.8344545), // 대상 지점
+                16, // 줌 레벨
+                20, // 기울임 각도
+                0 // 베어링 각도
+        );
+        naverMap.setCameraPosition(cameraPosition);
+
+        //나침반, 축척바, 줌버튼, 현위치 버튼을 활성화
+        UiSettings uiSettings = naverMap.getUiSettings();
+
+        uiSettings.setCompassEnabled(true); // 기본값 : true
+        uiSettings.setScaleBarEnabled(true); // 기본값 : true
+        uiSettings.setZoomControlEnabled(true); // 기본값 : true
+        uiSettings.setLocationButtonEnabled(true); // 기본값 : false
+
         InfoWindow infoWindow = new InfoWindow();
 
         Marker marker1 = new Marker();
@@ -86,7 +103,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         marker3.setMap(naverMap);
 
 
-        marker1.setTag("학생복지관관");
+        marker1.setTag("학생복지관");
        marker1.setOnClickListener(overlay -> {
             // 마커를 클릭할 때 정보창을 엶
             infoWindow.open(marker1);
